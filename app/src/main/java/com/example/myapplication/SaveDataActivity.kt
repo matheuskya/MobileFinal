@@ -26,7 +26,7 @@ class SaveDataActivity : AppCompatActivity() {
     private fun saveData(data: String) {
         lifecycleScope.launch {
             try {
-                val response = RetrofitInstance.api.saveData(DataModel(data))
+                val response = RetrofitInstance.api.saveData(DataModel(data = data))
                 if (response.isSuccessful) {
                     Toast.makeText(this@SaveDataActivity, "Data saved successfully", Toast.LENGTH_SHORT).show()
                     finish()

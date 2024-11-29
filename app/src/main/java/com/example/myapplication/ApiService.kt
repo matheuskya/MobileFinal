@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
-    @POST("saveData")
+    @POST("mensagens")
     suspend fun saveData(@Body data: DataModel): Response<DataModel>
 
     @GET("mensagens")
