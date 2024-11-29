@@ -12,6 +12,7 @@ class ViewDataActivity : AppCompatActivity() {
     private lateinit var adapter: DataAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        println("OIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_data)
 
@@ -31,6 +32,10 @@ class ViewDataActivity : AppCompatActivity() {
         lifecycleScope.launch {
             try {
                 val response = RetrofitInstance.api.getData()
+                println("OIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
+                println(response)
+                println(response.body())
+
                 if (response.isSuccessful) {
                     response.body()?.let { data ->
                         adapter.submitList(data)

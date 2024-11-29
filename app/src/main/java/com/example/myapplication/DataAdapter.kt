@@ -24,13 +24,13 @@ class DataAdapter : ListAdapter<DataModel, DataAdapter.DataViewHolder>(DataDiffC
         private val tvData: TextView = view.findViewById(R.id.tvData)
 
         fun bind(data: DataModel) {
-            tvData.text = data.data
+            tvData.text = data.name
         }
     }
 
     class DataDiffCallback : DiffUtil.ItemCallback<DataModel>() {
         override fun areItemsTheSame(oldItem: DataModel, newItem: DataModel): Boolean {
-            return oldItem.data == newItem.data
+            return oldItem.name == newItem.name
         }
 
         override fun areContentsTheSame(oldItem: DataModel, newItem: DataModel): Boolean {
